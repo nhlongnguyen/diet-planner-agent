@@ -1,0 +1,65 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+### 🔄 Project Awareness & Context
+- **Always read `PLANNING.md`** at the start of a new conversation to understand the project's architecture, tech stack, goals, and coding standards.
+- **Check `TASK.md`** before starting any task. If the task isn’t listed, add it with a short description and today's date.
+- **Follow naming conventions, file structure, and architecture patterns** as documented in `PLANNING.md`.
+
+---
+
+### 🧱 Code Structure & Modularity
+- **Never create a file longer than 500 lines of code.** If approaching this limit, refactor into smaller modules or helper utilities.
+- **Group code by feature or responsibility** (e.g., `agents/`, `tools/`, `workflows/`, `utils/`).
+- **Use relative imports** within the `src/` tree to maintain clean import paths.
+- Ensure all modules are reusable, testable, and independently understandable.
+
+---
+
+### 🧪 Testing & Reliability
+- **Use `Jest` for unit and integration tests.**
+- **Write at least 3 tests for every core function or module**:
+  - One for the expected/typical case
+  - One edge case
+  - One failure or invalid input case
+- **Tests should live in a `/tests` directory** mirroring the project structure.
+- **Update or rewrite tests** when modifying the logic of existing code.
+
+---
+
+### ✅ Task Completion
+- **Immediately mark completed tasks in `TASK.md`** after finishing them.
+- **Log any new subtasks or discovered issues** under a “Discovered During Work” section in `TASK.md`.
+
+---
+
+### 📎 Style & Conventions
+- **Use TypeScript** exclusively. No JavaScript or untyped code.
+- **Use `Zod` for runtime validation and input/output schemas.**
+- **Format code with `Prettier`**, lint with `ESLint`, and fix warnings proactively.
+- **Follow a consistent structure**:
+  - Use explicit return types on all functions
+  - Prefer type aliases or interfaces over `any`
+  - Export default components when a file contains a single main export
+- **Document non-trivial functions** with JSDoc-style comments:
+  ```ts
+  /**
+   * Generates a weekly meal plan based on user preferences.
+   * @param options - User dietary configuration and goals.
+   * @returns A full meal plan object.
+   */
+   ```
+   
+## 📚 Documentation & Explainability
+- **Update `README.md`** when setup steps, features, or dependencies change.
+- **Comment non-obvious logic and function-level details.**
+- For complex workflows, **use inline `// Reason:` comments** to explain the rationale behind key decisions or steps.
+
+## 🧠 AI Behavior Rules
+- **Never assume missing context. Ask clarifying questions.**
+- **Do not hallucinate packages, types, or functions** – only use verified TypeScript libraries or documented custom code.
+- **Validate file paths, exports, and imports** before referencing or editing any module.
+- **Avoid deleting or modifying existing logic** unless the task explicitly requires it or it’s listed in `TASK.md`.
+
