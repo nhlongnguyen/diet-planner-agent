@@ -13,6 +13,7 @@ This document provides a comprehensive reference for the Diet Planner Agent API,
 - [Utils](#utils)
   - [MemoryManager](#memorymanager)
   - [Validation](#validation)
+  - [ApiRateLimiting](#apiratelimiting)
 - [Types](#types)
   - [Diet Types and Goals](#diet-types-and-goals)
   - [User Preferences](#user-preferences)
@@ -31,7 +32,7 @@ import { DietPlanningWorkflow } from './workflows/dietPlanningWorkflow';
 #### Constructor
 
 ```typescript
-constructor()
+constructor();
 ```
 
 Creates a new instance of the workflow with the necessary dependencies (DietPlannerAgent, MemoryManager, and NutritionService).
@@ -44,11 +45,11 @@ Creates a new instance of the workflow with the necessary dependencies (DietPlan
 async process(
   userInput: unknown,
   userId?: string
-): Promise<{ 
-  success: boolean; 
-  data?: DietPlan; 
-  planId?: string; 
-  error?: string 
+): Promise<{
+  success: boolean;
+  data?: DietPlan;
+  planId?: string;
+  error?: string
 }>
 ```
 
@@ -66,11 +67,11 @@ Processes user preferences and generates a diet plan.
 async updatePlan(
   updatedPreferences: UserPreferences,
   userId: string
-): Promise<{ 
-  success: boolean; 
-  data?: DietPlan; 
-  planId?: string; 
-  error?: string 
+): Promise<{
+  success: boolean;
+  data?: DietPlan;
+  planId?: string;
+  error?: string
 }>
 ```
 
@@ -88,10 +89,10 @@ Updates an existing plan with new preferences.
 async getPlan(
   userId: string,
   planId: string
-): Promise<{ 
-  success: boolean; 
-  data?: DietPlan; 
-  error?: string 
+): Promise<{
+  success: boolean;
+  data?: DietPlan;
+  error?: string
 }>
 ```
 
@@ -178,7 +179,7 @@ import { NutritionService } from './services/nutritionService';
 #### Constructor
 
 ```typescript
-constructor()
+constructor();
 ```
 
 Creates a new nutrition service instance.
@@ -224,7 +225,7 @@ import { MemoryManager } from './utils/memoryManager';
 #### Constructor
 
 ```typescript
-constructor()
+constructor();
 ```
 
 Creates a new memory manager instance.
@@ -298,6 +299,65 @@ Lists all diet plans for a user.
 - **Returns**: Array of plan IDs
 - **Description**: Retrieves a list of all plan IDs associated with a user.
 
+### ApiRateLimiting
+
+Provides utilities for handling API rate limits with exponential backoff.
+
+```typescript
+import { withRetry, RetryOptions } from './utils/apiRateLimiting';
+```
+
+#### Types
+
+##### `RetryOptions`
+
+```typescript
+interface RetryOptions {
+  maxRetries: number;
+  initialDelayMs: number;
+  maxDelayMs: number;
+  backoffFactor: number;
+}
+```
+
+Configuration options for retry behavior.
+
+- `maxRetries`: Maximum number of retry attempts
+- `initialDelayMs`: Initial delay in milliseconds before the first retry
+- `maxDelayMs`: Maximum delay in milliseconds between retries
+- `backoffFactor`: Multiplier to increase delay after each retry
+
+#### Functions
+
+##### `withRetry`
+
+```typescript
+async function withRetry<T>(fn: () => Promise<T>, options: Partial<RetryOptions> = {}): Promise<T>;
+```
+
+Executes a function with exponential backoff retry logic.
+
+- **Parameters**:
+  - `fn`: Async function to execute with retry logic
+  - `options`: Optional configuration overrides for retry behavior
+- **Returns**: The result of the function execution
+- **Description**: Automatically retries the function when rate limit errors (HTTP 429) occur, using exponential backoff with jitter.
+
+#### Constants
+
+##### `DEFAULT_RETRY_OPTIONS`
+
+```typescript
+const DEFAULT_RETRY_OPTIONS: RetryOptions = {
+  maxRetries: 5,
+  initialDelayMs: 1000, // 1 second
+  maxDelayMs: 60000, // 60 seconds (1 minute)
+  backoffFactor: 2, // Double the delay each time
+};
+```
+
+Default configuration for retry behavior.
+
 ### Validation
 
 Utilities for validating user input.
@@ -311,11 +371,11 @@ import { parseUserInput } from './utils/validation';
 ##### `parseUserInput`
 
 ```typescript
-function parseUserInput(input: unknown): { 
-  success: boolean; 
-  data?: UserPreferences; 
-  error?: z.ZodError 
-}
+function parseUserInput(input: unknown): {
+  success: boolean;
+  data?: UserPreferences;
+  error?: z.ZodError;
+};
 ```
 
 Validates and parses user input against the UserPreferences schema.

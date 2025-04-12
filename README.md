@@ -11,6 +11,7 @@ An intelligent AI-powered diet planning assistant built with TypeScript and the 
 - Nutrition data integration for accurate meal planning
 - Memory management for persistent user experience
 - Plan retrieval and updating capabilities
+- OpenAI API rate limit handling with exponential backoff
 
 ## Tech Stack
 
@@ -54,6 +55,13 @@ Required environment variables:
 
 - `OPENAI_API_KEY`: Your OpenAI API key
 - `NUTRITION_API_KEY`: Your nutrition API key (if using an external API)
+
+Optional environment variables for rate limiting:
+
+- `OPENAI_MAX_RETRIES`: Number of retries when hitting rate limits (default: 5)
+- `OPENAI_INITIAL_DELAY_MS`: Initial delay between retries in milliseconds (default: 1000)
+- `OPENAI_MAX_DELAY_MS`: Maximum delay between retries in milliseconds (default: 60000)
+- `OPENAI_BACKOFF_FACTOR`: Factor to increase delay by after each retry (default: 2)
 
 4. Build the project:
 
@@ -161,6 +169,26 @@ The configuration object for diet plan generation.
   planDurationDays: number;    // Duration of plan in days (1-30)
 }
 ```
+
+## Rate Limiting
+
+The application includes built-in rate limit handling for OpenAI API calls with exponential backoff:
+
+- Automatically retries requests when hitting rate limits (HTTP 429 errors)
+- Uses configurable exponential backoff to space out retries
+- Adds small random jitter to prevent thundering herd problems
+- Configurable via environment variables
+
+Example configuration in `.env` file:
+
+```
+OPENAI_MAX_RETRIES=5
+OPENAI_INITIAL_DELAY_MS=1000
+OPENAI_MAX_DELAY_MS=60000
+OPENAI_BACKOFF_FACTOR=2
+```
+
+This helps prevent API failures during high-load periods or when approaching OpenAI's rate limits.
 
 ## Development
 

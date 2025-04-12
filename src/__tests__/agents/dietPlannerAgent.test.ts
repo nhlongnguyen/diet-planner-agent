@@ -9,7 +9,15 @@ global.fetch = jest.fn();
 // Mock the nutrition API
 jest.mock('../../tools/nutritionApi');
 // Mock NutritionService
-jest.mock('../../services/nutritionService');
+jest.mock('../../services/nutritionService', () => {
+  return {
+    NutritionService: jest.fn().mockImplementation(() => ({
+      hasIngredientData: jest.fn().mockResolvedValue(true),
+      getFoodNutritionData: jest.fn(),
+      searchFoods: jest.fn(),
+    })),
+  };
+});
 // Mock config
 jest.mock('../../config', () => ({
   config: {
@@ -35,11 +43,7 @@ describe('DietPlannerAgent', () => {
     searchFoods: jest.fn(),
   };
 
-  const mockNutritionService = {
-    hasIngredientData: jest.fn().mockResolvedValue(true),
-    getFoodNutritionData: jest.fn(),
-    searchFoods: jest.fn(),
-  };
+  let mockNutritionService: jest.Mocked<NutritionService>;
 
   const mockDailyPlan = {
     day: 1,
@@ -91,9 +95,26 @@ describe('DietPlannerAgent', () => {
       fat: 2,
     });
 
-    // Mock NutritionService
-    (NutritionService as jest.Mock).mockImplementation(() => mockNutritionService);
-    mockNutritionService.hasIngredientData.mockResolvedValue(true);
+    // Set up the mocked NutritionService
+    mockNutritionService = {
+      hasIngredientData: jest.fn().mockResolvedValue(true),
+      getFoodNutritionData: jest.fn().mockResolvedValue({
+        name: 'Oatmeal',
+        calories: 150,
+        protein: 5,
+        carbs: 27,
+        fat: 2,
+      }),
+      searchFoods: jest.fn().mockResolvedValue([
+        {
+          name: 'Oatmeal',
+          calories: 150,
+          protein: 5,
+          carbs: 27,
+          fat: 2,
+        },
+      ]),
+    } as unknown as jest.Mocked<NutritionService>;
 
     // Create agent with mocked NutritionService
     agent = new DietPlannerAgent(mockNutritionService);

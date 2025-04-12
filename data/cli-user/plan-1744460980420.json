@@ -1,0 +1,346 @@
+{
+  "userPreferences": {
+    "dietType": "regular",
+    "goal": "weight_loss",
+    "excludedIngredients": [],
+    "mealsPerDay": 3,
+    "planDurationDays": 7
+  },
+  "dailyPlans": [
+    {
+      "day": 1,
+      "date": "2025-04-12",
+      "meals": [
+        {
+          "name": "Meal 1",
+          "description": "Oatmeal with berries and nuts",
+          "totalCalories": 567,
+          "totalProtein": 35,
+          "totalCarbs": 71,
+          "totalFat": 16,
+          "ingredients": [
+            "Oatmeal",
+            "berries",
+            "nuts"
+          ]
+        },
+        {
+          "name": "Meal 2",
+          "description": "Grilled chicken salad with mixed greens",
+          "totalCalories": 567,
+          "totalProtein": 35,
+          "totalCarbs": 71,
+          "totalFat": 16,
+          "ingredients": [
+            "Grilled chicken salad",
+            "mixed greens"
+          ]
+        },
+        {
+          "name": "Meal 3",
+          "description": "Tofu and vegetable curry with brown rice",
+          "totalCalories": 567,
+          "totalProtein": 35,
+          "totalCarbs": 71,
+          "totalFat": 16,
+          "ingredients": [
+            "Tofu",
+            "vegetable curry",
+            "brown rice"
+          ]
+        }
+      ],
+      "totalCalories": 1701,
+      "totalProtein": 105,
+      "totalCarbs": 213,
+      "totalFat": 48
+    },
+    {
+      "day": 2,
+      "date": "2025-04-13",
+      "meals": [
+        {
+          "name": "Meal 1",
+          "description": "Scrambled eggs with vegetables",
+          "totalCalories": 567,
+          "totalProtein": 35,
+          "totalCarbs": 71,
+          "totalFat": 16,
+          "ingredients": [
+            "Scrambled eggs",
+            "vegetables"
+          ]
+        },
+        {
+          "name": "Meal 2",
+          "description": "Tuna salad with whole grain crackers",
+          "totalCalories": 567,
+          "totalProtein": 35,
+          "totalCarbs": 71,
+          "totalFat": 16,
+          "ingredients": [
+            "Tuna salad",
+            "whole grain crackers"
+          ]
+        },
+        {
+          "name": "Meal 3",
+          "description": "Grilled chicken with sweet potato and broccoli",
+          "totalCalories": 567,
+          "totalProtein": 35,
+          "totalCarbs": 71,
+          "totalFat": 16,
+          "ingredients": [
+            "Grilled chicken",
+            "sweet potato",
+            "broccoli"
+          ]
+        }
+      ],
+      "totalCalories": 1701,
+      "totalProtein": 105,
+      "totalCarbs": 213,
+      "totalFat": 48
+    },
+    {
+      "day": 3,
+      "date": "2025-04-14",
+      "meals": [
+        {
+          "name": "Meal 1",
+          "description": "Whole grain toast with avocado",
+          "totalCalories": 567,
+          "totalProtein": 35,
+          "totalCarbs": 71,
+          "totalFat": 16,
+          "ingredients": [
+            "Whole grain toast",
+            "avocado"
+          ]
+        },
+        {
+          "name": "Meal 2",
+          "description": "Tuna salad with whole grain crackers",
+          "totalCalories": 567,
+          "totalProtein": 35,
+          "totalCarbs": 71,
+          "totalFat": 16,
+          "ingredients": [
+            "Tuna salad",
+            "whole grain crackers"
+          ]
+        },
+        {
+          "name": "Meal 3",
+          "description": "Grilled chicken with sweet potato and broccoli",
+          "totalCalories": 567,
+          "totalProtein": 35,
+          "totalCarbs": 71,
+          "totalFat": 16,
+          "ingredients": [
+            "Grilled chicken",
+            "sweet potato",
+            "broccoli"
+          ]
+        }
+      ],
+      "totalCalories": 1701,
+      "totalProtein": 105,
+      "totalCarbs": 213,
+      "totalFat": 48
+    },
+    {
+      "day": 4,
+      "date": "2025-04-15",
+      "meals": [
+        {
+          "name": "Meal 1",
+          "description": "Greek yogurt with honey and granola",
+          "totalCalories": 567,
+          "totalProtein": 35,
+          "totalCarbs": 71,
+          "totalFat": 16,
+          "ingredients": [
+            "Greek yogurt",
+            "honey",
+            "granola"
+          ]
+        },
+        {
+          "name": "Meal 2",
+          "description": "Grilled chicken salad with mixed greens",
+          "totalCalories": 567,
+          "totalProtein": 35,
+          "totalCarbs": 71,
+          "totalFat": 16,
+          "ingredients": [
+            "Grilled chicken salad",
+            "mixed greens"
+          ]
+        },
+        {
+          "name": "Meal 3",
+          "description": "Grilled chicken with sweet potato and broccoli",
+          "totalCalories": 567,
+          "totalProtein": 35,
+          "totalCarbs": 71,
+          "totalFat": 16,
+          "ingredients": [
+            "Grilled chicken",
+            "sweet potato",
+            "broccoli"
+          ]
+        }
+      ],
+      "totalCalories": 1701,
+      "totalProtein": 105,
+      "totalCarbs": 213,
+      "totalFat": 48
+    },
+    {
+      "day": 5,
+      "date": "2025-04-16",
+      "meals": [
+        {
+          "name": "Meal 1",
+          "description": "Scrambled eggs with vegetables",
+          "totalCalories": 567,
+          "totalProtein": 35,
+          "totalCarbs": 71,
+          "totalFat": 16,
+          "ingredients": [
+            "Scrambled eggs",
+            "vegetables"
+          ]
+        },
+        {
+          "name": "Meal 2",
+          "description": "Tuna salad with whole grain crackers",
+          "totalCalories": 567,
+          "totalProtein": 35,
+          "totalCarbs": 71,
+          "totalFat": 16,
+          "ingredients": [
+            "Tuna salad",
+            "whole grain crackers"
+          ]
+        },
+        {
+          "name": "Meal 3",
+          "description": "Turkey meatballs with zucchini noodles",
+          "totalCalories": 567,
+          "totalProtein": 35,
+          "totalCarbs": 71,
+          "totalFat": 16,
+          "ingredients": [
+            "Turkey meatballs",
+            "zucchini noodles"
+          ]
+        }
+      ],
+      "totalCalories": 1701,
+      "totalProtein": 105,
+      "totalCarbs": 213,
+      "totalFat": 48
+    },
+    {
+      "day": 6,
+      "date": "2025-04-17",
+      "meals": [
+        {
+          "name": "Meal 1",
+          "description": "Whole grain toast with avocado",
+          "totalCalories": 567,
+          "totalProtein": 35,
+          "totalCarbs": 71,
+          "totalFat": 16,
+          "ingredients": [
+            "Whole grain toast",
+            "avocado"
+          ]
+        },
+        {
+          "name": "Meal 2",
+          "description": "Quinoa bowl with roasted vegetables",
+          "totalCalories": 567,
+          "totalProtein": 35,
+          "totalCarbs": 71,
+          "totalFat": 16,
+          "ingredients": [
+            "Quinoa bowl",
+            "roasted vegetables"
+          ]
+        },
+        {
+          "name": "Meal 3",
+          "description": "Baked salmon with asparagus and brown rice",
+          "totalCalories": 567,
+          "totalProtein": 35,
+          "totalCarbs": 71,
+          "totalFat": 16,
+          "ingredients": [
+            "Baked salmon",
+            "asparagus",
+            "brown rice"
+          ]
+        }
+      ],
+      "totalCalories": 1701,
+      "totalProtein": 105,
+      "totalCarbs": 213,
+      "totalFat": 48
+    },
+    {
+      "day": 7,
+      "date": "2025-04-18",
+      "meals": [
+        {
+          "name": "Meal 1",
+          "description": "Whole grain toast with avocado",
+          "totalCalories": 567,
+          "totalProtein": 35,
+          "totalCarbs": 71,
+          "totalFat": 16,
+          "ingredients": [
+            "Whole grain toast",
+            "avocado"
+          ]
+        },
+        {
+          "name": "Meal 2",
+          "description": "Quinoa bowl with roasted vegetables",
+          "totalCalories": 567,
+          "totalProtein": 35,
+          "totalCarbs": 71,
+          "totalFat": 16,
+          "ingredients": [
+            "Quinoa bowl",
+            "roasted vegetables"
+          ]
+        },
+        {
+          "name": "Meal 3",
+          "description": "Turkey meatballs with zucchini noodles",
+          "totalCalories": 567,
+          "totalProtein": 35,
+          "totalCarbs": 71,
+          "totalFat": 16,
+          "ingredients": [
+            "Turkey meatballs",
+            "zucchini noodles"
+          ]
+        }
+      ],
+      "totalCalories": 1701,
+      "totalProtein": 105,
+      "totalCarbs": 213,
+      "totalFat": 48
+    }
+  ],
+  "overview": {
+    "averageDailyCalories": 1701,
+    "averageDailyProtein": 105,
+    "averageDailyCarbs": 213,
+    "averageDailyFat": 48
+  }
+}
